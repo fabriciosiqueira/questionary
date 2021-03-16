@@ -22,17 +22,12 @@ export default () => {
 
     //Hooks
     const navigation = useNavigation();
-    const list = useSelector(state => state.questionary.list);
+    const list = [];//useSelector(state => state.questionary.list);
     const dispatch = useDispatch();
 
     useLayoutEffect(()=>{
         navigation.setOptions({
-            title: "Questionarios",
-            headerRight:()=>(
-                <AddButton underlayColor="transparent" onPress={()=>navigation.navigate('CreateQuestionary')}>
-                    <AddButtonImage source={require('../../assets/more.png')} />
-                </AddButton>
-            )  
+            title: "Questionario Nome" 
         })
     }, []);
 
@@ -65,7 +60,7 @@ export default () => {
                 <NoList>
                     <NoListImage source={require('../../assets/note.png')}/>
                     <NoListText>
-                        Não há questionarios
+                        Não há perguntas
                     </NoListText>
                 </NoList>
             }

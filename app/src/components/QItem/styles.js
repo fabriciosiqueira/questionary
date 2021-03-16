@@ -5,8 +5,6 @@ export const Box = styled.TouchableHighlight`
     border-style: solid;
     border-bottom-color: #FFF;
     border-bottom-width: 0.5px;
-    flex-direction: row;
-    align-Items: center;
 `;
 
 export const MarcarArea = styled.View`

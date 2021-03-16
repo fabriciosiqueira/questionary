@@ -2,7 +2,7 @@ const initialState = {
     adm:"82192263",
     list:[
       {
-          createdAt:"07/03/2021",
+          createdAt:"15/03/2021 15:31:37",
           titulo:"Questionario de Exemplo",
           user:{
               name:"Fabricio Siqueira",
@@ -70,10 +70,17 @@ export default (state = initialState, action) => {
 
 
     switch(action.type) {
-        case 'ADD_AFAZER':
-
+        case 'ADD_QUESTIONARY':
+            //title:action.payload.item,
             newList.push({
-                title:action.payload.item,
+                
+                createdAt:action.payload.createdAt,
+                titulo:action.payload.titulo,
+                user:{
+                    name:action.payload.name,
+                    email:action.payload.email,
+                },
+                questions:action.payload.questions
             })
             
         break;

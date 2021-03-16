@@ -17,6 +17,32 @@ export const TitleInput = styled.TextInput`
     color: #FFF;
 `;
 
+export const AddButton = styled.TouchableHighlight`
+    margin-right: 15px;
+
+`;
+
+export const AddQuestionButton = styled.TouchableHighlight`
+    
+
+`;
+
+export const List = styled.FlatList`
+    flex: 1;
+    width:100%
+`;
+
+
+export const QTitulo = styled.Text`
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    color: #FFF;
+    text-align: center;
+`;
+
+
+
 export const BodyInput = styled.TextInput`
     flex:1;
     padding:15px;
@@ -28,6 +54,12 @@ export const BodyInput = styled.TextInput`
 
 export const SaveButton = styled.TouchableHighlight`
     margin-right: 15px;
+
+`;
+
+export const BoxButton = styled.View`
+    justify-content: row;
+    align-items: space-between
 
 `;
 
@@ -68,4 +100,8 @@ export const TrocarStatus = styled.Switch``;
 
 export const TrocarStatusView = styled.View``;
 
+export const ObsText = styled.Text`
+    font-size:15px;
+    color:#FFF
+`;
 
