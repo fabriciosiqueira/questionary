@@ -36,10 +36,9 @@ export default () => {
         })
     }, []);
 
-    const handleQuestionaryPress = (index, data) => {
-        navigation.navigate('AnswerQuestionary', {
-            key: index,
-            data
+    const handleQuestionaryPress = (index) => {
+        navigation.navigate('QuetionList', {
+            key:index
         })
     }
 

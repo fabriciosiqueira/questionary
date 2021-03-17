@@ -3,8 +3,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 //pages
 import ListScreen from '../pages/ListScreen';
-import addQScreen from '../pages/addQScreen';
-import QuestionaryListScreen from "../pages/QuestionaryListScreen";
+import AddQScreen from '../pages/AddQScreen';
+import QuetionListScreen from "../pages/QuetionListScreen";
+import AnswerScreen from "../pages/AnswerScreen";
 
 
 const MainStack = createStackNavigator();
@@ -17,7 +18,8 @@ export default () => (
         headerTintColor:'#FFF'
     }}>
         <MainStack.Screen name='List' component={ListScreen} />
-        <MainStack.Screen name='CreateQuestionary' component={addQScreen} />
-        <MainStack.Screen name='QuestionaryList' component={QuestionaryListScreen} />
+        <MainStack.Screen name='CreateQuestionary' component={AddQScreen} />
+        <MainStack.Screen name='QuetionList' component={QuetionListScreen} />
+        <MainStack.Screen name='AnswerQuetion' component={AnswerScreen} />
     </MainStack.Navigator>
 );

@@ -3,8 +3,6 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     flex: 1;
     background-color: #458a39;
-    justify-content: center;
-    align-items: center;
 
 `;
 
@@ -38,4 +36,27 @@ export const NoListImage = styled.Image`
 export const NoListText = styled.Text`
     font-size:17px;
     color:#FFF
+`;
+
+export const BoxInput = styled.View`
+    padding:10px;
+`;
+
+export const TitleInput = styled.TextInput`
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    color: #FFF;
+    width:100%
+`;
+
+export const CloseButton = styled.TouchableHighlight`
+    margin-left:15px;
+
+`;
+
+export const CloseButtonImage = styled.Image`
+    width:20px;
+    height:20px;
+
 `;

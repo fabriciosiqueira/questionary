@@ -36,7 +36,6 @@ export default () => {
     
     
     //States
-    const [data, setData] = useState('');
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [addQuestion, setAddQuestion] = useState("");
@@ -54,12 +53,12 @@ export default () => {
                 </SaveButton>
             )  
         })
-    }, [quetions,titulo,userEmail]);
+    }, [status,titulo,userEmail]);
 
     
 
     const handleSaveBnt = () => {
-        if(titulo != "" && quetions.length > 0) {
+        if(titulo != "" && userEmail != "" && userName != "" && quetions.length > 0) {
             let data = moment().format('DD/MM/YYYY HH:mm:ss');
             dispatch({
                 type: 'ADD_QUESTIONARY',
@@ -87,7 +86,6 @@ export default () => {
         
         if(question == "") {
             alert("Ops... Você precisa preencher o campo 'Criar Pergunta'.");
-            setStatus(false);
         } else {
             let check = question.split('');
             let ultimoElemento = check[check.length - 1];

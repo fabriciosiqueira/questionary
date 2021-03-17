@@ -1,5 +1,18 @@
+
+/*
+    abaixo existe a propriedade chamada "adm"
+    ela foi setada no caso de proteçao inicial
+    para o privelegio de criar ou deletar questionarios
+    nao foi  implementada para esse MVP cocierge de teste
+    mas caso fosse necessaria, antes de cada açao descrita anteriormente,
+    iria se requistar a digitaçao da senha para tais fins
+*/
 const initialState = {
     adm:"82192263",
+    AnswerData:{
+        name:"",
+        email:""
+    },
     list:[
       {
           createdAt:"15/03/2021 15:31:37",
@@ -8,13 +21,13 @@ const initialState = {
               name:"Fabricio Siqueira",
               email:"blackfchanel@gmail.com",
           },
-          questions:[
+          quetions:[
               {
                   q:"Pergunta exemplo 1?",
                   r:[
                       {
-                          repsposta:"Resposta exemplo 1",
-                          data:"09/03/2021",
+                          resposta:"Resposta exemplo 1",
+                          data:"17/03/2021 15:31:37",
                           loc:{
                               lat:"",
                               long:""
@@ -23,8 +36,8 @@ const initialState = {
                           email:"fulano@gmail.com"
                       },
                       {
-                        repsposta:"Resposta exemplo 1",
-                        data:"09/03/2021",
+                        resposta:"Resposta exemplo 1",
+                        data:"17/03/2021 15:31:37",
                         loc:{
                             lat:"",
                             long:""
@@ -35,11 +48,11 @@ const initialState = {
                   ]
               },
               {
-                q:"Pergunta exemplo 2",
+                q:"Pergunta exemplo 2?",
                 r:[
                     {
                         repsposta:"Resposta exemplo 2",
-                        data:"09/03/2021",
+                        data:"17/03/2021 15:31:37",
                         loc:{
                             lat:"",
                             long:""
@@ -49,7 +62,7 @@ const initialState = {
                     },
                     {
                       repsposta:"Resposta exemplo 2",
-                      data:"09/03/2021",
+                      data:"17/03/2021 15:31:37",
                       loc:{
                           lat:"",
                           long:""
@@ -80,9 +93,29 @@ export default (state = initialState, action) => {
                     name:action.payload.name,
                     email:action.payload.email,
                 },
-                questions:action.payload.questions
+                quetions:action.payload.questions
             })
             
+        break;
+        case 'EXIT_QUESTIONARY':
+            state.AnswerData.name = action.payload.AnswerData.name;
+            state.AnswerData.email = action.payload.AnswerData.email;
+            
+        break;
+        case 'ADD_USER_QUESTIONARY':
+            state.AnswerData.name = action.payload.AnswerData.name;
+            state.AnswerData.email = action.payload.AnswerData.email;
+        break;
+        case 'ADD_ANSWER':
+            console.log("index: ",action.payload.questionario)
+            if(newList[action.payload.questionario]) {
+                console.log("entrou")
+                let array = newList[action.payload.questionario].quetions[action.payload.questao].r.push(action.payload.item);
+                console.log("array atualizado", array)
+                console.log("salvou")
+            } else {
+                console.log("falhou")
+            }
         break;
         case 'EDIT_AFAZER':
 
@@ -92,7 +125,6 @@ export default (state = initialState, action) => {
                 };
             }
             
-        break;
         break;
         case 'DEL_AFAZER':
 

@@ -24,7 +24,9 @@
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "react-native-permissions": "^3.0.0",
+    "@react-native-community/geolocation": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
