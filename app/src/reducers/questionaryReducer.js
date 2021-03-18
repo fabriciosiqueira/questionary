@@ -107,25 +107,7 @@ export default (state = initialState, action) => {
                 console.log("falhou")
             }
         break;
-        case 'EDIT_AFAZER':
-
-            if(newList[action.payload.key]){
-                newList[action.payload.key] = {
-                    item:action.payload.item,
-                };
-            }
-            
-        break;
-        case 'DEL_AFAZER':
-
-            newList = newList.filter((item, index)=>index != action.payload.key);
-            
-        break;
-        case 'LIST_AFAZER':
-
-            newList = action.payload.list;
-            
-        break;
+        
 
     }
 
