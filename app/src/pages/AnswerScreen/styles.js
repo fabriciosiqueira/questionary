@@ -98,6 +98,7 @@ export const TrocarStatusView = styled.View``;
 export const ObsText = styled.Text`
     padding:5px;
     font-size:10px;
-    color:#FFF
+    color:#FFF;
+    text-align: center;
 `;
 

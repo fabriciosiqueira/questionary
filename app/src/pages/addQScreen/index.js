@@ -63,13 +63,15 @@ export default () => {
             dispatch({
                 type: 'ADD_QUESTIONARY',
                 payload:{
-                    createdAt:`${data}`,
-                    titulo,
-                    user:{
-                        name:userName,
-                        email:userEmail,
-                    },
-                    quetions
+                    item: {
+                        createdAt:`${data}`,
+                        titulo,
+                        user:{
+                            name:userName,
+                            email:userEmail,
+                        },
+                        quetions
+                    }
                 }
             })
 

@@ -51,7 +51,7 @@ const initialState = {
                 q:"Pergunta exemplo 2?",
                 r:[
                     {
-                        repsposta:"Resposta exemplo 2",
+                        resposta:"Resposta exemplo 2",
                         data:"17/03/2021 15:31:37",
                         loc:{
                             lat:"",
@@ -61,7 +61,7 @@ const initialState = {
                         email:"fulano@gmail.com"
                     },
                     {
-                      repsposta:"Resposta exemplo 2",
+                      resposta:"Resposta exemplo 2",
                       data:"17/03/2021 15:31:37",
                       loc:{
                           lat:"",
@@ -85,16 +85,7 @@ export default (state = initialState, action) => {
     switch(action.type) {
         case 'ADD_QUESTIONARY':
             //title:action.payload.item,
-            newList.push({
-                
-                createdAt:action.payload.createdAt,
-                titulo:action.payload.titulo,
-                user:{
-                    name:action.payload.name,
-                    email:action.payload.email,
-                },
-                quetions:action.payload.questions
-            })
+            newList.push(action.payload.item)
             
         break;
         case 'EXIT_QUESTIONARY':
@@ -107,12 +98,11 @@ export default (state = initialState, action) => {
             state.AnswerData.email = action.payload.AnswerData.email;
         break;
         case 'ADD_ANSWER':
-            console.log("index: ",action.payload.questionario)
+            
             if(newList[action.payload.questionario]) {
                 console.log("entrou")
                 let array = newList[action.payload.questionario].quetions[action.payload.questao].r.push(action.payload.item);
-                console.log("array atualizado", array)
-                console.log("salvou")
+                
             } else {
                 console.log("falhou")
             }

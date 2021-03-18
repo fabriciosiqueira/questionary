@@ -11,15 +11,12 @@ import {
 
 
 export default ({data, index}) => {
-   
-
-    
 
     return (   
         
         <BoxView>
             <Title>
-                Localidade | {data.name} - {data.email}
+              {index + 1} - {data.name} | {data.email}
             </Title>
             <Title>
                 Data: {data.data}

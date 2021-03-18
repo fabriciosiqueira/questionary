@@ -14,6 +14,7 @@ import {
     BodyInput,
     SaveButton,
     SaveButtonImage,
+    QTitulo
 } from './styles';
 
 //Import de componentes personalizados
@@ -101,7 +102,7 @@ export default () => {
                 })
 
             } else {
-                alert(`Desculpe - nos, mas para proseguirmos precisaremos de sua geolocalizaçao para analizes futuras`)
+                alert(`Desculpe - nos, mas para proseguirmos precisaremos de sua geolocalizaçao de sua regiao, para analizes futuras`)
                 navigation.goBack();
             }
             
@@ -123,6 +124,9 @@ export default () => {
                 placeholderTextColor="CCC"
                 multiline={true}
             />
+            <QTitulo>
+                RESPOSTAS
+            </QTitulo>
             <Scroller>
                 {list[route.params.questionaryKey].quetions[route.params.key].r.length > 0 ?
                 
